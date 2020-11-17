@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HandleMsg",
+  "anyOf": [
+    {
+      "type": "object",
+      "required": [
+        "try_pot_pool_deposit"
+      ],
+      "properties": {
+        "try_pot_pool_deposit": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "try_change_maxcredit"
+      ],
+      "properties": {
+        "try_change_maxcredit": {
+          "type": "object",
+          "required": [
+            "max_credit"
+          ],
+          "properties": {
+            "max_credit": {
+              "$ref": "#/definitions/Uint128"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "try_change_mincredit"
+      ],
+      "properties": {
+        "try_change_mincredit": {
+          "type": "object",
+          "required": [
+            "min_credit"
+          ],
+          "properties": {
+            "min_credit": {
+              "$ref": "#/definitions/Uint128"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "try_chainge_fee"
+      ],
+      "properties": {
+        "try_chainge_fee": {
+          "type": "object",
+          "required": [
+            "fee"
+          ],
+          "properties": {
+            "fee": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "try_pot_pool_withdraw"
+      ],
+      "properties": {
+        "try_pot_pool_withdraw": {
+          "type": "object",
+          "required": [
+            "amount"
+          ],
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Uint128"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "ruler"
+      ],
+      "properties": {
+        "ruler": {
+          "type": "object",
+          "required": [
+            "bet_amount",
+            "phrase",
+            "position",
+            "prediction_number"
+          ],
+          "properties": {
+            "bet_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "phrase": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string"
+            },
+            "prediction_number": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "Uint128": {
+      "type": "string"
+    }
+  }
+}

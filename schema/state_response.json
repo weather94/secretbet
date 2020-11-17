@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StateResponse",
+  "type": "object",
+  "required": [
+    "contract_owner",
+    "house_fee",
+    "max_credit",
+    "min_credit",
+    "pot_pool"
+  ],
+  "properties": {
+    "contract_owner": {
+      "$ref": "#/definitions/HumanAddr"
+    },
+    "house_fee": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "max_credit": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "min_credit": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "pot_pool": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  },
+  "definitions": {
+    "HumanAddr": {
+      "type": "string"
+    }
+  }
+}

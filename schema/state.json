@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "State",
+  "type": "object",
+  "required": [
+    "contract_owner",
+    "house_fee",
+    "max_credit",
+    "min_credit",
+    "pot_pool",
+    "seed"
+  ],
+  "properties": {
+    "contract_owner": {
+      "$ref": "#/definitions/CanonicalAddr"
+    },
+    "house_fee": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "max_credit": {
+      "$ref": "#/definitions/Uint128"
+    },
+    "min_credit": {
+      "$ref": "#/definitions/Uint128"
+    },
+    "pot_pool": {
+      "$ref": "#/definitions/Uint128"
+    },
+    "seed": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      }
+    }
+  },
+  "definitions": {
+    "Binary": {
+      "description": "Binary is a wrapper around Vec<u8> to add base64 de/serialization with serde. It also adds some helper methods to help encode inline.\n\nThis is only needed as serde-json-{core,wasm} has a horrible encoding for Vec<u8>",
+      "type": "string"
+    },
+    "CanonicalAddr": {
+      "$ref": "#/definitions/Binary"
+    },
+    "Uint128": {
+      "type": "string"
+    }
+  }
+}
